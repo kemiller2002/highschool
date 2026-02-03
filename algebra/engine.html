@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Practice Questions Viewer</title>
+  <title>Practice Questions Engine</title>
 
   <style>
     :root { color-scheme: light; }
     body{
       font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      max-width: 980px;
+      max-width: 1020px;
       margin: 28px auto;
       padding: 0 14px 60px;
       line-height: 1.5;
@@ -35,22 +35,43 @@
       display:none;
       white-space: pre-wrap;
     }
-    .controls{
+
+    .toolbar{
       display:flex;
       flex-wrap:wrap;
-      gap:10px;
+      gap:10px 12px;
+      align-items:end;
       margin-top:12px;
-      align-items:center;
+    }
+    .field{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      min-width: 180px;
+    }
+    label{
+      font-size:0.9rem;
+      color:#555;
+      font-weight:700;
+    }
+    select, input{
+      border:1px solid #ddd;
+      background:#fff;
+      border-radius:12px;
+      padding:10px 10px;
+      font-size:1rem;
+      outline:none;
     }
     button{
       border:1px solid #ddd;
       background:#fff;
       padding:10px 12px;
       border-radius:12px;
-      font-weight:650;
+      font-weight:750;
       cursor:pointer;
     }
     button:hover{ background:#f3f3f3; }
+
     .pill{
       display:inline-block;
       padding:6px 10px;
@@ -59,10 +80,17 @@
       color:#444;
       font-size:0.9rem;
     }
-    ol{ padding-left:1.35em; margin:0; }
-    li{
+
+    .cards{
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+      margin:0;
+      padding:0;
+      list-style:none;
+    }
+    .card{
       background:#fff;
-      margin:12px 0;
       padding:14px 14px 12px;
       border-radius:14px;
       box-shadow:0 4px 14px rgba(0,0,0,0.06);
@@ -73,7 +101,25 @@
       gap:8px;
       margin-bottom:10px;
     }
-    .concept{ font-size:0.95rem; color:#555; }
+    .meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:center;
+      margin-top:2px;
+    }
+    .badge{
+      font-size:0.85rem;
+      padding:4px 8px;
+      border-radius:999px;
+      background:#f3f3f3;
+      color:#444;
+      border:1px solid #e6e6e6;
+    }
+    .concept{
+      font-size:0.95rem;
+      color:#555;
+    }
     .row{
       display:flex;
       gap:10px;
@@ -85,9 +131,10 @@
       background:#fff;
       padding:8px 10px;
       border-radius:12px;
-      font-weight:700;
+      font-weight:800;
     }
     .toggle[data-open="true"]{ background:#eaf3ff; border-color:#c7ddff; }
+
     .answer{
       display:none;
       margin-top:10px;
@@ -97,20 +144,25 @@
       border:1px solid #e7e7e7;
       white-space: pre-wrap;
     }
-    footer{
-      margin-top:22px;
-      color:#666;
+
+    .small{
       font-size:0.9rem;
-      text-align:center;
+      color:#666;
     }
     code{
       background:#f3f3f3;
       padding:2px 6px;
       border-radius:8px;
     }
+    footer{
+      margin-top:22px;
+      color:#666;
+      font-size:0.9rem;
+      text-align:center;
+    }
   </style>
 
-  <!-- Optional MathJax support (for LaTeX in questions/answers). Safe if no LaTeX present. -->
+  <!-- Optional MathJax support -->
   <script>
     window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] } };
   </script>
@@ -119,39 +171,123 @@
 
 <body>
   <header>
-    <h1 id="title">Practice Questions Viewer</h1>
-    <p class="muted" id="subtitle">Load a JSON problem set via a URL parameter.</p>
+    <h1 id="title">Practice Questions Engine</h1>
+    <p class="muted" id="subtitle">Load one or more JSON sets and filter/shuffle by concept.</p>
 
-    <div class="controls">
-      <span class="pill" id="filePill">file: (none)</span>
+    <div class="toolbar">
+      <div class="field" style="min-width: 320px;">
+        <label>Loaded sets</label>
+        <div class="pill" id="filePill">files: (none)</div>
+      </div>
+
+      <div class="field">
+        <label for="conceptSelect">Concept filter</label>
+        <select id="conceptSelect">
+          <option value="__all__">All concepts</option>
+        </select>
+      </div>
+
+      <div class="field" style="min-width: 140px;">
+        <label for="countInput">How many</label>
+        <input id="countInput" type="number" min="1" max="500" value="25" />
+      </div>
+
+      <div class="field" style="min-width: 150px;">
+        <label for="shuffleSelect">Order</label>
+        <select id="shuffleSelect">
+          <option value="shuffle">Randomize (shuffle)</option>
+          <option value="as_loaded">As loaded</option>
+        </select>
+      </div>
+
+      <div class="field" style="min-width: 170px;">
+        <label for="showConceptSelect">Show concept label</label>
+        <select id="showConceptSelect">
+          <option value="show">Show</option>
+          <option value="hide">Hide</option>
+        </select>
+      </div>
+
+      <button type="button" onclick="applyFilters()">Apply</button>
       <button type="button" onclick="expandAll()">Show all answers</button>
       <button type="button" onclick="collapseAll()">Hide all answers</button>
-      <button type="button" onclick="toggleAll()">Toggle all</button>
     </div>
 
     <div class="error" id="err"></div>
 
-    <p class="muted" style="margin-top:12px;">
-      Usage: open this page like <code>viewer.html?file=algebra2_100.json</code>
+    <p class="muted small" style="margin-top:12px;">
+      URL examples:
+      <br/>
+      <code>engine.html?file=data/setA.json</code>
+      <br/>
+      <code>engine.html?files=data/setA.json,data/setC.json&amp;concept=logarithms&amp;count=30&amp;shuffle=1</code>
     </p>
-    <p class="muted" style="margin-top:6px;">
-      Note: some browsers block loading JSON via <code>file://</code>. If you see an error, run a local server
-      (examples at the bottom of this page).
+    <p class="muted small" style="margin-top:6px;">
+      If loading fails on <code>file://</code>, run a local server:
+      <code>python -m http.server 8000</code>
     </p>
   </header>
 
-  <ol id="questions"></ol>
+  <ul class="cards" id="cards"></ul>
 
   <footer>
-    <div>Local server quick starts:</div>
-    <div><code>python -m http.server 8000</code> then open <code>http://localhost:8000/viewer.html?file=YOUR.json</code></div>
-    <div style="margin-top:6px;"><code>npx serve</code> also works if you have Node installed.</div>
+    <div>Tip: Filter by a single concept and do 10–20 at a time for best results.</div>
   </footer>
 
 <script>
-  function getParam(name) {
-    const params = new URLSearchParams(window.location.search);
-    return params.get(name);
+  function getParams() {
+    return new URLSearchParams(window.location.search);
+  }
+
+  function getAllFilesFromQuery() {
+    const params = getParams();
+
+    // Support:
+    // ?file=a.json
+    // ?file=a.json&file=b.json
+    // ?files=a.json,b.json
+    // also accept ?json / ?set for backward compatibility
+    const multi = params.getAll('file');
+    const csv = params.get('files');
+    const legacyOne = params.get('json') || params.get('set') || params.get('file') || params.get('files');
+
+    let files = [];
+
+    if (multi && multi.length > 0) files.push(...multi);
+
+    if (csv) {
+      files.push(...csv.split(',').map(s => s.trim()).filter(Boolean));
+    }
+
+    // If nothing collected but legacy is present (like single files=... used as one)
+    if (files.length === 0 && legacyOne) {
+      if (legacyOne.includes(',')) files.push(...legacyOne.split(',').map(s => s.trim()).filter(Boolean));
+      else files.push(legacyOne.trim());
+    }
+
+    // Deduplicate while preserving order
+    const seen = new Set();
+    files = files.filter(f => {
+      if (seen.has(f)) return false;
+      seen.add(f);
+      return true;
+    });
+
+    return files;
+  }
+
+  function getInitialSettings() {
+    const params = getParams();
+    const concept = params.get('concept') || '__all__';
+    const count = parseInt(params.get('count') || '25', 10);
+    const shuffle = params.get('shuffle') === '0' ? 'as_loaded' : 'shuffle';
+    const showConcept = (params.get('showConcept') || 'show').toLowerCase() === 'hide' ? 'hide' : 'show';
+    return {
+      concept,
+      count: Number.isFinite(count) && count > 0 ? count : 25,
+      shuffle,
+      showConcept
+    };
   }
 
   function showError(msg) {
@@ -159,7 +295,6 @@
     el.style.display = 'block';
     el.textContent = msg;
   }
-
   function clearError() {
     const el = document.getElementById('err');
     el.style.display = 'none';
@@ -175,50 +310,236 @@
       .replaceAll("'", '&#039;');
   }
 
-  function render(data) {
-    const title = data?.title ? String(data.title) : 'Practice Questions';
-    const version = data?.version ? `v${data.version}` : '';
-    const notes = data?.notes ? String(data.notes) : '';
-    const questions = Array.isArray(data?.questions) ? data.questions : [];
+  function shuffleArray(arr) {
+    // Fisher–Yates
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
 
-    document.getElementById('title').textContent = title;
-    document.getElementById('subtitle').textContent = [version, notes].filter(Boolean).join(' • ') || 'Click “Show answer” to toggle solutions.';
-    const list = document.getElementById('questions');
-    list.innerHTML = '';
+  // Global state
+  let ALL_QUESTIONS = [];     // normalized question objects
+  let CONCEPTS = {};          // concept_key -> display_name
+  let LOADED_TITLES = [];     // set titles
+  let CURRENT_RENDER = [];    // questions currently on screen
 
-    questions.forEach((q, idx) => {
-      const id = (q && (q.id ?? (idx + 1))) ?? (idx + 1);
-      const qType = q?.question_type ?? 'unknown';
-      const qText = q?.question ?? '';
-      const aText = q?.answer ?? '';
+  function normalizeSet(json) {
+    // Support both v1 and v2:
+    // v1 question_type + question + answer
+    // v2 concept + difficulty + tags + concepts map
+    const conceptsMap = json && typeof json === 'object' ? (json.concepts || {}) : {};
+    const localConcepts = {};
 
-      const li = document.createElement('li');
-      li.innerHTML = `
-        <div class="qhead">
-          <div><strong>${escapeHtml(id)}.</strong> ${escapeHtml(qText)}</div>
-          <div class="concept">(Concept: ${escapeHtml(qType)})</div>
-        </div>
-        <div class="row">
-          <button class="toggle" type="button" data-open="false" onclick="toggleAnswer('${escapeHtml(id)}')">Show answer</button>
-        </div>
-        <div class="answer" id="a${escapeHtml(id)}">${escapeHtml(aText)}</div>
-      `;
-      list.appendChild(li);
+    for (const [k, v] of Object.entries(conceptsMap)) {
+      localConcepts[k] = (v && v.display_name) ? String(v.display_name) : k;
+    }
+
+    const questions = Array.isArray(json?.questions) ? json.questions : [];
+    const normalized = questions.map((q, idx) => {
+      const concept = q?.concept || q?.question_type || 'unknown';
+      const conceptDisplay =
+        q?.concept_display ||
+        localConcepts[concept] ||
+        CONCEPTS[concept] ||
+        concept;
+
+      const difficulty =
+        Number.isFinite(q?.difficulty) ? q.difficulty :
+        0;
+
+      const tags =
+        Array.isArray(q?.tags) ? q.tags :
+        [];
+
+      const id = q?.id ?? `${concept}_${idx+1}`;
+
+      return {
+        _id: String(id),
+        concept: String(concept),
+        concept_display: String(conceptDisplay),
+        difficulty: difficulty,
+        tags: tags.map(t => String(t)),
+        question: String(q?.question ?? ''),
+        answer: String(q?.answer ?? '')
+      };
     });
 
-    // If MathJax is loaded, typeset the newly-inserted content
+    return { normalized, localConcepts };
+  }
+
+  async function loadAll() {
+    clearError();
+
+    const files = getAllFilesFromQuery();
+    document.getElementById('filePill').textContent = 'files: ' + (files.length ? files.join(', ') : '(none)');
+
+    if (!files.length) {
+      showError(
+        "No JSON file specified.\n\n" +
+        "Use:\n  engine.html?file=data/setA.json\n" +
+        "or:\n  engine.html?files=data/setA.json,data/setC.json\n"
+      );
+      return;
+    }
+
+    try {
+      // Fetch all sets
+      const fetched = await Promise.all(files.map(async (f) => {
+        const res = await fetch(f, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status} fetching "${f}"`);
+        const json = await res.json();
+        return { file: f, json };
+      }));
+
+      // Reset state
+      ALL_QUESTIONS = [];
+      CONCEPTS = {};
+      LOADED_TITLES = [];
+
+      // Merge concept maps first (so later sets can reuse)
+      for (const { json } of fetched) {
+        const cm = json?.concepts || {};
+        for (const [k, v] of Object.entries(cm)) {
+          if (!CONCEPTS[k]) {
+            CONCEPTS[k] = (v && v.display_name) ? String(v.display_name) : k;
+          }
+        }
+      }
+
+      // Normalize questions and merge concepts
+      for (const { json } of fetched) {
+        if (json?.title) LOADED_TITLES.push(String(json.title));
+        const { normalized, localConcepts } = normalizeSet(json);
+
+        for (const [k, disp] of Object.entries(localConcepts)) {
+          if (!CONCEPTS[k]) CONCEPTS[k] = disp;
+        }
+
+        ALL_QUESTIONS.push(...normalized);
+      }
+
+      // Update header
+      const title = LOADED_TITLES.length ? `Practice Questions Engine (${LOADED_TITLES.length} set${LOADED_TITLES.length>1?'s':''})` : 'Practice Questions Engine';
+      document.getElementById('title').textContent = title;
+      document.getElementById('subtitle').textContent = LOADED_TITLES.join(' • ') || 'Loaded JSON sets';
+
+      // Populate concept dropdown
+      populateConceptDropdown();
+
+      // Apply initial settings from query
+      const init = getInitialSettings();
+      document.getElementById('conceptSelect').value = init.concept;
+      document.getElementById('countInput').value = String(init.count);
+      document.getElementById('shuffleSelect').value = init.shuffle;
+      document.getElementById('showConceptSelect').value = init.showConcept;
+
+      applyFilters(true);
+
+    } catch (e) {
+      showError(
+        "Could not load JSON file(s).\n\n" +
+        "Common causes:\n" +
+        "1) Browser blocked file:// fetch (use a local server)\n" +
+        "2) Wrong path/name\n" +
+        "3) JSON parse error\n\n" +
+        "Details:\n" + (e?.message ? e.message : String(e))
+      );
+    }
+  }
+
+  function populateConceptDropdown() {
+    const select = document.getElementById('conceptSelect');
+    const current = select.value || '__all__';
+    select.innerHTML = `<option value="__all__">All concepts</option>`;
+
+    // Build list from ALL_QUESTIONS
+    const keys = Array.from(new Set(ALL_QUESTIONS.map(q => q.concept))).sort((a,b) => {
+      const da = (CONCEPTS[a] || a).toLowerCase();
+      const db = (CONCEPTS[b] || b).toLowerCase();
+      return da.localeCompare(db);
+    });
+
+    for (const k of keys) {
+      const disp = CONCEPTS[k] || k;
+      const opt = document.createElement('option');
+      opt.value = k;
+      opt.textContent = disp;
+      select.appendChild(opt);
+    }
+
+    // Try to preserve selection if still present
+    const exists = keys.includes(current) || current === '__all__';
+    select.value = exists ? current : '__all__';
+  }
+
+  function applyFilters(isInitial=false) {
+    const concept = document.getElementById('conceptSelect').value || '__all__';
+    const count = Math.max(1, parseInt(document.getElementById('countInput').value || '25', 10));
+    const order = document.getElementById('shuffleSelect').value || 'shuffle';
+    const showConcept = document.getElementById('showConceptSelect').value || 'show';
+
+    let pool = ALL_QUESTIONS.slice();
+
+    if (concept !== '__all__') {
+      pool = pool.filter(q => q.concept === concept);
+    }
+
+    if (order === 'shuffle') {
+      shuffleArray(pool);
+    }
+
+    CURRENT_RENDER = pool.slice(0, count);
+
+    renderCards(CURRENT_RENDER, showConcept === 'show');
+
+    // typeset math after render
     if (window.MathJax && window.MathJax.typesetPromise) {
       window.MathJax.typesetPromise().catch(() => {});
     }
+
+    // If initial load and shuffle=0 was requested, we already honored order setting.
+  }
+
+  function renderCards(questions, showConcept) {
+    const container = document.getElementById('cards');
+    container.innerHTML = '';
+
+    questions.forEach((q) => {
+      const tags = (q.tags || []).map(t => `<span class="badge">${escapeHtml(t)}</span>`).join('');
+      const diff = q.difficulty ? `<span class="badge">Difficulty ${escapeHtml(q.difficulty)}</span>` : '';
+      const conceptLine = showConcept
+        ? `<div class="concept">(Concept: ${escapeHtml(q.concept_display || q.concept)})</div>`
+        : '';
+
+      const li = document.createElement('li');
+      li.className = 'card';
+      li.innerHTML = `
+        <div class="qhead">
+          <div>${escapeHtml(q.question)}</div>
+          ${conceptLine}
+          <div class="meta">
+            ${diff}
+            ${tags}
+          </div>
+        </div>
+
+        <div class="row">
+          <button class="toggle" type="button" data-open="false" onclick="toggleAnswer('${escapeHtml(q._id)}')">Show answer</button>
+        </div>
+
+        <div class="answer" id="a${escapeHtml(q._id)}">${escapeHtml(q.answer)}</div>
+      `;
+      container.appendChild(li);
+    });
   }
 
   function toggleAnswer(id) {
     const ans = document.getElementById('a' + id);
     if (!ans) return;
-
     const btn = ans.parentElement.querySelector('button.toggle');
     const isOpen = ans.style.display === 'block';
-
     ans.style.display = isOpen ? 'none' : 'block';
     btn.textContent = isOpen ? 'Show answer' : 'Hide answer';
     btn.dataset.open = isOpen ? 'false' : 'true';
@@ -241,56 +562,13 @@
     document.querySelectorAll('button.toggle').forEach(b => { b.textContent = 'Show answer'; b.dataset.open = 'false'; });
   }
 
-  function toggleAll() {
-    const answers = Array.from(document.querySelectorAll('.answer'));
-    const anyHidden = answers.some(a => a.style.display !== 'block');
-    if (anyHidden) expandAll();
-    else collapseAll();
-  }
-
-  async function load() {
-    clearError();
-
-    const file = getParam('file') || getParam('json') || getParam('set');
-    const pill = document.getElementById('filePill');
-    pill.textContent = 'file: ' + (file || '(none)');
-
-    if (!file) {
-      showError(
-        "Missing parameter.\n\n" +
-        "Add a query string like:\n" +
-        "  viewer.html?file=algebra2_100.json\n\n" +
-        "Your JSON must match the format:\n" +
-        "{ title, version, notes, questions: [ { id, question_type, question, answer }, ... ] }"
-      );
-      return;
-    }
-
-    try {
-      // Fetch the JSON (must be served over http(s) in many browsers).
-      const res = await fetch(file, { cache: "no-store" });
-      if (!res.ok) throw new Error(`HTTP ${res.status} when fetching "${file}"`);
-      const data = await res.json();
-      render(data);
-    } catch (e) {
-      showError(
-        "Could not load the JSON file.\n\n" +
-        "Common causes:\n" +
-        "1) Browser blocked file:// fetch. Use a local server.\n" +
-        "2) Wrong path/name. Verify the JSON file is next to this page or adjust the file path.\n" +
-        "3) JSON parse error.\n\n" +
-        "Details:\n" + (e && e.message ? e.message : String(e))
-      );
-    }
-  }
-
-  // Expose functions for inline onclick handlers
+  // expose
   window.toggleAnswer = toggleAnswer;
   window.expandAll = expandAll;
   window.collapseAll = collapseAll;
-  window.toggleAll = toggleAll;
+  window.applyFilters = applyFilters;
 
-  load();
+  loadAll();
 </script>
 </body>
 </html>
