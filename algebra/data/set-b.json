@@ -1,0 +1,127 @@
+{
+  "title": "Algebra 2 – 100 Question Problem Set (Set B)",
+  "version": "2.0",
+  "notes": "Upgraded from v1.0 to the shared-concepts schema. Each question now uses: concept (key), difficulty (1–5), and tags (array). Display names are provided by data/concepts.json.",
+  "concepts_ref": "data/concepts.json",
+  "questions": [
+    { "id": "B001", "concept": "functions_basics", "difficulty": 1, "tags": ["function-notation","evaluate"], "question": "If f(x)=3x-2, find f(5).", "answer": "f(5)=13" },
+    { "id": "B002", "concept": "functions_basics", "difficulty": 1, "tags": ["function-notation","evaluate"], "question": "If g(x)=x^2+1, find g(-3).", "answer": "10" },
+    { "id": "B003", "concept": "functions_basics", "difficulty": 1, "tags": ["interpretation"], "question": "What does f(2)=7 mean in words?", "answer": "When the input is 2, the output is 7" },
+    { "id": "B004", "concept": "functions_domain_range", "difficulty": 2, "tags": ["domain","rational"], "question": "State the domain of f(x)=1/(x-4).", "answer": "All real x except x=4" },
+    { "id": "B005", "concept": "functions_domain_range", "difficulty": 2, "tags": ["domain","radical"], "question": "State the domain of f(x)=√(x+7).", "answer": "x ≥ -7" },
+
+    { "id": "B006", "concept": "functions_domain_range", "difficulty": 2, "tags": ["range","quadratic"], "question": "State the range of f(x)=x^2.", "answer": "y ≥ 0" },
+    { "id": "B007", "concept": "functions_domain_range", "difficulty": 2, "tags": ["range","quadratic","reflect"], "question": "State the range of f(x)=-x^2.", "answer": "y ≤ 0" },
+    { "id": "B008", "concept": "functions_composition_inverse", "difficulty": 3, "tags": ["inverse","one-to-one"], "question": "Is f(x)=x^2 invertible over all real numbers?", "answer": "No, it is not one-to-one" },
+    { "id": "B009", "concept": "functions_composition_inverse", "difficulty": 3, "tags": ["inverse","restrict-domain"], "question": "How can f(x)=x^2 be restricted to make it invertible?", "answer": "Restrict domain to x ≥ 0 or x ≤ 0" },
+    { "id": "B010", "concept": "functions_composition_inverse", "difficulty": 3, "tags": ["inverse","linear"], "question": "Find the inverse of f(x)=2x-7.", "answer": "f⁻¹(x)=(x+7)/2" },
+
+    { "id": "B011", "concept": "functions_composition_inverse", "difficulty": 2, "tags": ["composition"], "question": "If f(x)=x+1 and g(x)=x^2, find (f∘g)(x).", "answer": "x^2+1" },
+    { "id": "B012", "concept": "functions_composition_inverse", "difficulty": 2, "tags": ["composition"], "question": "If f(x)=2x and g(x)=x-3, find (g∘f)(x).", "answer": "2x-3" },
+    { "id": "B013", "concept": "functions_composition_inverse", "difficulty": 2, "tags": ["inverse","identity"], "question": "What is f(f⁻¹(x)) for any invertible function f?", "answer": "x" },
+    { "id": "B014", "concept": "functions_basics", "difficulty": 2, "tags": ["even-odd"], "question": "Determine if f(x)=x^2 is even, odd, or neither.", "answer": "Even" },
+    { "id": "B015", "concept": "functions_basics", "difficulty": 2, "tags": ["even-odd"], "question": "Determine if f(x)=x^3 is even, odd, or neither.", "answer": "Odd" },
+
+    { "id": "B016", "concept": "functions_basics", "difficulty": 1, "tags": ["symmetry","even"], "question": "What symmetry does an even function have?", "answer": "Symmetry about the y-axis" },
+    { "id": "B017", "concept": "functions_basics", "difficulty": 1, "tags": ["symmetry","odd"], "question": "What symmetry does an odd function have?", "answer": "Rotational symmetry about the origin" },
+    { "id": "B018", "concept": "functions_basics", "difficulty": 3, "tags": ["average-rate-of-change"], "question": "Find the average rate of change of f(x)=x^2 from x=2 to x=5.", "answer": "7" },
+    { "id": "B019", "concept": "functions_basics", "difficulty": 2, "tags": ["average-rate-of-change","interpretation"], "question": "What does average rate of change represent graphically?", "answer": "The slope of the secant line" },
+    { "id": "B020", "concept": "functions_basics", "difficulty": 1, "tags": ["linear-vs-nonlinear","graph"], "question": "How can you tell from a graph if a function is linear?", "answer": "The graph is a straight line" },
+
+    { "id": "B021", "concept": "functions_transformations", "difficulty": 1, "tags": ["parent-function"], "question": "Identify the parent function of y=(x-3)^2.", "answer": "y=x^2" },
+    { "id": "B022", "concept": "functions_transformations", "difficulty": 1, "tags": ["parent-function"], "question": "Identify the parent function of y=|x|+4.", "answer": "y=|x|" },
+    { "id": "B023", "concept": "functions_transformations", "difficulty": 2, "tags": ["shift"], "question": "Describe the transformation from y=x^2 to y=(x+2)^2.", "answer": "Shift left 2" },
+    { "id": "B024", "concept": "functions_transformations", "difficulty": 2, "tags": ["stretch"], "question": "Describe the transformation from y=x^2 to y=3x^2.", "answer": "Vertical stretch by factor of 3" },
+    { "id": "B025", "concept": "functions_transformations", "difficulty": 2, "tags": ["reflect"], "question": "Describe the transformation from y=x^2 to y=-x^2.", "answer": "Reflection over the x-axis" },
+
+    { "id": "B026", "concept": "absolute_value", "difficulty": 1, "tags": ["graph-shape"], "question": "What is the shape of the graph y=|x|?", "answer": "V-shaped" },
+    { "id": "B027", "concept": "absolute_value", "difficulty": 1, "tags": ["reflect"], "question": "What happens to y=|x| when multiplied by -1?", "answer": "It reflects over the x-axis" },
+    { "id": "B028", "concept": "functions_basics", "difficulty": 1, "tags": ["piecewise","definition"], "question": "What is a piecewise function?", "answer": "A function defined by different rules on different intervals" },
+    { "id": "B029", "concept": "functions_basics", "difficulty": 2, "tags": ["piecewise","evaluate"], "question": "If f(x)={x+1 for x<0; x^2 for x≥0}, find f(-4).", "answer": "-3" },
+    { "id": "B030", "concept": "functions_basics", "difficulty": 2, "tags": ["piecewise","evaluate"], "question": "Using the same function, find f(3).", "answer": "9" },
+
+    { "id": "B031", "concept": "quadratics", "difficulty": 1, "tags": ["graph-features","intercepts"], "question": "How many x-intercepts can a quadratic have at most?", "answer": "2" },
+    { "id": "B032", "concept": "quadratics", "difficulty": 2, "tags": ["discriminant","meaning"], "question": "What does the discriminant tell you?", "answer": "The number of real solutions" },
+    { "id": "B033", "concept": "modeling", "difficulty": 2, "tags": ["quadratic","projectile"], "question": "Why are projectile motion problems quadratic?", "answer": "Because vertical motion involves squared time" },
+    { "id": "B034", "concept": "polynomials_graphs", "difficulty": 2, "tags": ["intercepts","degree"], "question": "How many x-intercepts can a 5th-degree polynomial have at most?", "answer": "5" },
+    { "id": "B035", "concept": "polynomials_graphs", "difficulty": 2, "tags": ["end-behavior"], "question": "What determines the end behavior of a polynomial?", "answer": "Degree and leading coefficient" },
+
+    { "id": "B036", "concept": "exponentials", "difficulty": 2, "tags": ["compare-growth"], "question": "Which grows faster: x^3 or 2^x?", "answer": "2^x" },
+    { "id": "B037", "concept": "exponentials", "difficulty": 2, "tags": ["interpretation","growth-factor"], "question": "What does a growth factor of 1.05 represent?", "answer": "5% growth per period" },
+    { "id": "B038", "concept": "exponentials", "difficulty": 2, "tags": ["interpretation","decay-factor"], "question": "What does a decay factor of 0.8 represent?", "answer": "20% decrease per period" },
+    { "id": "B039", "concept": "exponentials", "difficulty": 3, "tags": ["model","interpretation"], "question": "Write a model for y=200(1.1)^t and explain what it represents.", "answer": "Initial value 200 growing 10% per time unit" },
+    { "id": "B040", "concept": "modeling", "difficulty": 2, "tags": ["exponential","why"], "question": "Why are exponential models used for population growth?", "answer": "Growth is proportional to current size" },
+
+    { "id": "B041", "concept": "logarithms", "difficulty": 2, "tags": ["meaning","definition"], "question": "What does log_b(x)=y mean?", "answer": "b^y = x" },
+    { "id": "B042", "concept": "logarithms", "difficulty": 2, "tags": ["inverse"], "question": "What is the inverse of y=2^x?", "answer": "y=log_2(x)" },
+    { "id": "B043", "concept": "logarithms", "difficulty": 2, "tags": ["domain","reasoning"], "question": "Why must logarithm inputs be positive?", "answer": "Exponential outputs are always positive" },
+    { "id": "B044", "concept": "logarithms", "difficulty": 1, "tags": ["growth-rate"], "question": "Do logarithmic functions grow quickly or slowly?", "answer": "Slowly" },
+    { "id": "B045", "concept": "modeling", "difficulty": 2, "tags": ["log-scale","interpretation"], "question": "Why are logarithmic scales used for earthquakes or sound?", "answer": "They compress large ranges of values" },
+
+    { "id": "B046", "concept": "radicals", "difficulty": 1, "tags": ["parent-function"], "question": "What is the parent function of y=√x?", "answer": "y=√x" },
+    { "id": "B047", "concept": "functions_domain_range", "difficulty": 2, "tags": ["domain","radical","interpretation"], "question": "Why does y=√(x-3) start at x=3?", "answer": "Values less than 3 make the radicand negative" },
+    { "id": "B048", "concept": "functions_transformations", "difficulty": 2, "tags": ["radical","shift"], "question": "Describe y=√(x+4)+2.", "answer": "Left 4, up 2" },
+    { "id": "B049", "concept": "functions_composition_inverse", "difficulty": 3, "tags": ["inverse","domain-restriction"], "question": "How are y=x^2 and y=√x related?", "answer": "They are inverses with domain restrictions" },
+    { "id": "B050", "concept": "radical_equations", "difficulty": 2, "tags": ["reasoning","extraneous"], "question": "Why must radical equation solutions be checked?", "answer": "Squaring can introduce extraneous solutions" },
+
+    { "id": "B051", "concept": "rational_functions", "difficulty": 2, "tags": ["vertical-asymptote","cause"], "question": "What causes vertical asymptotes in rational functions?", "answer": "Zeros in the denominator" },
+    { "id": "B052", "concept": "rational_functions", "difficulty": 2, "tags": ["holes","cause"], "question": "What causes holes in rational functions?", "answer": "Common factors that cancel" },
+    { "id": "B053", "concept": "rational_functions", "difficulty": 2, "tags": ["horizontal-asymptote","degrees"], "question": "What determines horizontal asymptotes?", "answer": "Comparing degrees of numerator and denominator" },
+    { "id": "B054", "concept": "rational_functions", "difficulty": 3, "tags": ["horizontal-asymptote","equal-degrees"], "question": "What does it mean if degrees are equal?", "answer": "Horizontal asymptote equals ratio of leading coefficients" },
+    { "id": "B055", "concept": "rational_functions", "difficulty": 2, "tags": ["horizontal-asymptote","numerator-less"], "question": "What happens if numerator degree is less than denominator?", "answer": "Horizontal asymptote at y=0" },
+
+    { "id": "B056", "concept": "sequences_series", "difficulty": 1, "tags": ["identify","arithmetic"], "question": "Is the sequence 2, 5, 8, 11 arithmetic or geometric?", "answer": "Arithmetic" },
+    { "id": "B057", "concept": "sequences_series", "difficulty": 1, "tags": ["identify","geometric"], "question": "Is the sequence 3, 6, 12, 24 geometric or arithmetic?", "answer": "Geometric" },
+    { "id": "B058", "concept": "sequences_series", "difficulty": 1, "tags": ["reasoning","arithmetic"], "question": "What operation defines an arithmetic sequence?", "answer": "Addition" },
+    { "id": "B059", "concept": "sequences_series", "difficulty": 1, "tags": ["reasoning","geometric"], "question": "What operation defines a geometric sequence?", "answer": "Multiplication" },
+    { "id": "B060", "concept": "sequences_series", "difficulty": 2, "tags": ["graphs","arithmetic"], "question": "What type of graph does an arithmetic sequence form?", "answer": "Linear" },
+
+    { "id": "B061", "concept": "sequences_series", "difficulty": 2, "tags": ["graphs","geometric"], "question": "What type of graph does a geometric sequence form?", "answer": "Exponential" },
+    { "id": "B062", "concept": "modeling", "difficulty": 2, "tags": ["model-selection","linear"], "question": "When should you use a linear model instead of exponential?", "answer": "When change is constant" },
+    { "id": "B063", "concept": "modeling", "difficulty": 2, "tags": ["model-selection","exponential"], "question": "When should you use an exponential model?", "answer": "When change is proportional" },
+    { "id": "B064", "concept": "modeling", "difficulty": 1, "tags": ["scatterplot","correlation"], "question": "What does a positive correlation mean?", "answer": "As one variable increases, the other tends to increase" },
+    { "id": "B065", "concept": "modeling", "difficulty": 1, "tags": ["scatterplot","correlation"], "question": "What does no correlation mean?", "answer": "No apparent relationship between variables" },
+
+    { "id": "B066", "concept": "modeling", "difficulty": 2, "tags": ["regression","purpose"], "question": "What is the purpose of regression?", "answer": "To model data with a function" },
+    { "id": "B067", "concept": "modeling", "difficulty": 2, "tags": ["regression","linear","slope"], "question": "What does slope represent in a linear regression?", "answer": "Rate of change" },
+    { "id": "B068", "concept": "modeling", "difficulty": 2, "tags": ["regression","exponential","base"], "question": "What does the base represent in exponential regression?", "answer": "Growth or decay factor" },
+    { "id": "B069", "concept": "modeling", "difficulty": 1, "tags": ["outlier","definition"], "question": "What is an outlier?", "answer": "A data point far from the general trend" },
+    { "id": "B070", "concept": "modeling", "difficulty": 2, "tags": ["outlier","effect"], "question": "How do outliers affect regression models?", "answer": "They can skew the model" },
+
+    { "id": "B071", "concept": "polynomials_graphs", "difficulty": 1, "tags": ["compare-growth"], "question": "Which grows faster for large x: x^2 or x^3?", "answer": "x^3" },
+    { "id": "B072", "concept": "exponentials", "difficulty": 2, "tags": ["compare-growth"], "question": "Which grows faster for large x: x^5 or 3^x?", "answer": "3^x" },
+    { "id": "B073", "concept": "functions_composition_inverse", "difficulty": 2, "tags": ["inverse","graph"], "question": "How do you graph an inverse function?", "answer": "Reflect the graph over y=x" },
+    { "id": "B074", "concept": "functions_composition_inverse", "difficulty": 2, "tags": ["inverse","test"], "question": "What test determines if a graph has an inverse?", "answer": "Horizontal line test" },
+    { "id": "B075", "concept": "functions_composition_inverse", "difficulty": 2, "tags": ["inverse","one-to-one"], "question": "What does failing the horizontal line test mean?", "answer": "The function is not one-to-one" },
+
+    { "id": "B076", "concept": "functions_basics", "difficulty": 2, "tags": ["continuity","definition"], "question": "What does it mean for a function to be continuous?", "answer": "No breaks, holes, or jumps" },
+    { "id": "B077", "concept": "functions_basics", "difficulty": 1, "tags": ["continuity","polynomials"], "question": "Are polynomials continuous?", "answer": "Yes, everywhere" },
+    { "id": "B078", "concept": "functions_basics", "difficulty": 2, "tags": ["continuity","rational"], "question": "Are rational functions continuous?", "answer": "Only where defined" },
+    { "id": "B079", "concept": "rational_functions", "difficulty": 3, "tags": ["behavior","near-asymptote"], "question": "What happens to f(x)=1/x as x approaches 0?", "answer": "The function grows without bound or decreases without bound" },
+    { "id": "B080", "concept": "rational_functions", "difficulty": 2, "tags": ["asymptotic-behavior"], "question": "What does asymptotic behavior describe?", "answer": "Behavior near asymptotes or infinity" },
+
+    { "id": "B081", "concept": "modeling", "difficulty": 1, "tags": ["interpretation","y-intercept"], "question": "What does the y-intercept represent in a real-world model?", "answer": "Initial value" },
+    { "id": "B082", "concept": "modeling", "difficulty": 1, "tags": ["interpretation","slope"], "question": "What does slope represent in a linear model?", "answer": "Rate of change" },
+    { "id": "B083", "concept": "modeling", "difficulty": 2, "tags": ["domain","real-world"], "question": "Why is domain often restricted in real-world problems?", "answer": "Negative or unrealistic values may not make sense" },
+    { "id": "B084", "concept": "modeling", "difficulty": 2, "tags": ["range","real-world"], "question": "Why might range be restricted in modeling?", "answer": "Outputs may have physical limits" },
+    { "id": "B085", "concept": "modeling", "difficulty": 1, "tags": ["why-functions"], "question": "Why are functions useful in modeling?", "answer": "They describe consistent input-output relationships" },
+
+    { "id": "B086", "concept": "modeling", "difficulty": 1, "tags": ["graph","slope-steep"], "question": "What does a steep slope indicate?", "answer": "Rapid change" },
+    { "id": "B087", "concept": "modeling", "difficulty": 1, "tags": ["graph","flat"], "question": "What does a flat line indicate?", "answer": "No change" },
+    { "id": "B088", "concept": "modeling", "difficulty": 1, "tags": ["graph","decreasing"], "question": "What does a decreasing function mean?", "answer": "Outputs decrease as inputs increase" },
+    { "id": "B089", "concept": "modeling", "difficulty": 1, "tags": ["graph","increasing"], "question": "What does an increasing function mean?", "answer": "Outputs increase as inputs increase" },
+    { "id": "B090", "concept": "polynomials_graphs", "difficulty": 2, "tags": ["turning-point","meaning"], "question": "What does a turning point represent?", "answer": "A change from increasing to decreasing or vice versa" },
+
+    { "id": "B091", "concept": "linear_inequality", "difficulty": 2, "tags": ["graphing","half-plane"], "question": "How do you graph y > 3x - 2?", "answer": "Dashed line with shading above" },
+    { "id": "B092", "concept": "quadratics", "difficulty": 3, "tags": ["graphing","inequality"], "question": "How do you graph y ≤ x^2?", "answer": "Solid parabola with shading below" },
+    { "id": "B093", "concept": "systems", "difficulty": 2, "tags": ["graphing","intersection"], "question": "What does the intersection of two graphs represent?", "answer": "A solution to the system" },
+    { "id": "B094", "concept": "systems", "difficulty": 2, "tags": ["graphing","no-solution"], "question": "What does no intersection mean?", "answer": "No solution" },
+    { "id": "B095", "concept": "systems", "difficulty": 2, "tags": ["graphing","infinite-solutions"], "question": "What does infinitely many intersections mean?", "answer": "Infinitely many solutions" },
+
+    { "id": "B096", "concept": "functions_basics", "difficulty": 1, "tags": ["vocabulary","independent"], "question": "What does independent variable mean?", "answer": "Input variable" },
+    { "id": "B097", "concept": "functions_basics", "difficulty": 1, "tags": ["vocabulary","dependent"], "question": "What does dependent variable mean?", "answer": "Output variable" },
+    { "id": "B098", "concept": "modeling", "difficulty": 2, "tags": ["validation"], "question": "Why should models be validated?", "answer": "To ensure they fit the data appropriately" },
+    { "id": "B099", "concept": "modeling", "difficulty": 2, "tags": ["limitations","extrapolation"], "question": "Why might a model fail outside its data range?", "answer": "Assumptions may no longer hold" },
+    { "id": "B100", "concept": "modeling", "difficulty": 2, "tags": ["course-goal","synthesis"], "question": "What is the main goal of Algebra 2?", "answer": "To understand and model relationships between quantities" }
+  ]
+}
