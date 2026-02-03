@@ -1,0 +1,126 @@
+{
+  "title": "Algebra 2 – 100 Question Problem Set (Set B)",
+  "version": "1.0",
+  "notes": "Second Algebra 2 set with expanded coverage: functions, graphs, modeling, inverses, domains, transformations, sequences, and logarithmic reasoning.",
+  "questions": [
+    { "id": 1, "question_type": "function_notation", "question": "If f(x)=3x-2, find f(5).", "answer": "f(5)=13" },
+    { "id": 2, "question_type": "function_notation", "question": "If g(x)=x^2+1, find g(-3).", "answer": "10" },
+    { "id": 3, "question_type": "function_interpretation", "question": "What does f(2)=7 mean in words?", "answer": "When the input is 2, the output is 7" },
+    { "id": 4, "question_type": "domain_from_expression", "question": "State the domain of f(x)=1/(x-4).", "answer": "All real x except x=4" },
+    { "id": 5, "question_type": "domain_from_expression", "question": "State the domain of f(x)=√(x+7).", "answer": "x ≥ -7" },
+
+    { "id": 6, "question_type": "range_from_expression", "question": "State the range of f(x)=x^2.", "answer": "y ≥ 0" },
+    { "id": 7, "question_type": "range_from_expression", "question": "State the range of f(x)=-x^2.", "answer": "y ≤ 0" },
+    { "id": 8, "question_type": "inverse_existence", "question": "Is f(x)=x^2 invertible over all real numbers?", "answer": "No, it is not one-to-one" },
+    { "id": 9, "question_type": "inverse_restriction", "question": "How can f(x)=x^2 be restricted to make it invertible?", "answer": "Restrict domain to x ≥ 0 or x ≤ 0" },
+    { "id": 10, "question_type": "inverse_find", "question": "Find the inverse of f(x)=2x-7.", "answer": "f⁻¹(x)=(x+7)/2" },
+
+    { "id": 11, "question_type": "composition", "question": "If f(x)=x+1 and g(x)=x^2, find (f∘g)(x).", "answer": "x^2+1" },
+    { "id": 12, "question_type": "composition", "question": "If f(x)=2x and g(x)=x-3, find (g∘f)(x).", "answer": "2x-3" },
+    { "id": 13, "question_type": "composition_inverse", "question": "What is f(f⁻¹(x)) for any invertible function f?", "answer": "x" },
+    { "id": 14, "question_type": "even_odd_functions", "question": "Determine if f(x)=x^2 is even, odd, or neither.", "answer": "Even" },
+    { "id": 15, "question_type": "even_odd_functions", "question": "Determine if f(x)=x^3 is even, odd, or neither.", "answer": "Odd" },
+
+    { "id": 16, "question_type": "symmetry_graphs", "question": "What symmetry does an even function have?", "answer": "Symmetry about the y-axis" },
+    { "id": 17, "question_type": "symmetry_graphs", "question": "What symmetry does an odd function have?", "answer": "Rotational symmetry about the origin" },
+    { "id": 18, "question_type": "average_rate_of_change", "question": "Find the average rate of change of f(x)=x^2 from x=2 to x=5.", "answer": "7" },
+    { "id": 19, "question_type": "rate_of_change_interpretation", "question": "What does average rate of change represent graphically?", "answer": "The slope of the secant line" },
+    { "id": 20, "question_type": "linear_vs_nonlinear", "question": "How can you tell from a graph if a function is linear?", "answer": "The graph is a straight line" },
+
+    { "id": 21, "question_type": "parent_functions", "question": "Identify the parent function of y=(x-3)^2.", "answer": "y=x^2" },
+    { "id": 22, "question_type": "parent_functions", "question": "Identify the parent function of y=|x|+4.", "answer": "y=|x|" },
+    { "id": 23, "question_type": "function_transformations", "question": "Describe the transformation from y=x^2 to y=(x+2)^2.", "answer": "Shift left 2" },
+    { "id": 24, "question_type": "function_transformations", "question": "Describe the transformation from y=x^2 to y=3x^2.", "answer": "Vertical stretch by factor of 3" },
+    { "id": 25, "question_type": "function_transformations", "question": "Describe the transformation from y=x^2 to y=-x^2.", "answer": "Reflection over the x-axis" },
+
+    { "id": 26, "question_type": "absolute_value_graphs", "question": "What is the shape of the graph y=|x|?", "answer": "V-shaped" },
+    { "id": 27, "question_type": "absolute_value_graphs", "question": "What happens to y=|x| when multiplied by -1?", "answer": "It reflects over the x-axis" },
+    { "id": 28, "question_type": "piecewise_definition", "question": "What is a piecewise function?", "answer": "A function defined by different rules on different intervals" },
+    { "id": 29, "question_type": "piecewise_evaluate", "question": "If f(x)={x+1 for x<0; x^2 for x≥0}, find f(-4).", "answer": "-3" },
+    { "id": 30, "question_type": "piecewise_evaluate", "question": "Using the same function, find f(3).", "answer": "9" },
+
+    { "id": 31, "question_type": "quadratic_graph_features", "question": "How many x-intercepts can a quadratic have at most?", "answer": "2" },
+    { "id": 32, "question_type": "quadratic_graph_features", "question": "What does the discriminant tell you?", "answer": "The number of real solutions" },
+    { "id": 33, "question_type": "quadratic_modeling", "question": "Why are projectile motion problems quadratic?", "answer": "Because vertical motion involves squared time" },
+    { "id": 34, "question_type": "polynomial_graphs", "question": "How many x-intercepts can a 5th-degree polynomial have at most?", "answer": "5" },
+    { "id": 35, "question_type": "polynomial_graphs", "question": "What determines the end behavior of a polynomial?", "answer": "Degree and leading coefficient" },
+
+    { "id": 36, "question_type": "exponential_vs_polynomial", "question": "Which grows faster: x^3 or 2^x?", "answer": "2^x" },
+    { "id": 37, "question_type": "exponential_growth_interpretation", "question": "What does a growth factor of 1.05 represent?", "answer": "5% growth per period" },
+    { "id": 38, "question_type": "exponential_decay_interpretation", "question": "What does a decay factor of 0.8 represent?", "answer": "20% decrease per period" },
+    { "id": 39, "question_type": "exponential_modeling", "question": "Write a model for $y=200(1.1)^t$ and explain what it represents.", "answer": "Initial value 200 growing 10% per time unit" },
+    { "id": 40, "question_type": "exponential_modeling", "question": "Why are exponential models used for population growth?", "answer": "Growth is proportional to current size" },
+
+    { "id": 41, "question_type": "logarithm_meaning", "question": "What does log_b(x)=y mean?", "answer": "b^y = x" },
+    { "id": 42, "question_type": "logarithm_graphs", "question": "What is the inverse of y=2^x?", "answer": "y=log_2(x)" },
+    { "id": 43, "question_type": "logarithm_domain", "question": "Why must logarithm inputs be positive?", "answer": "Exponential outputs are always positive" },
+    { "id": 44, "question_type": "logarithmic_growth", "question": "Do logarithmic functions grow quickly or slowly?", "answer": "Slowly" },
+    { "id": 45, "question_type": "logarithmic_scale", "question": "Why are logarithmic scales used for earthquakes or sound?", "answer": "They compress large ranges of values" },
+
+    { "id": 46, "question_type": "radical_functions", "question": "What is the parent function of y=√x?", "answer": "y=√x" },
+    { "id": 47, "question_type": "radical_domain", "question": "Why does y=√(x-3) start at x=3?", "answer": "Values less than 3 make the radicand negative" },
+    { "id": 48, "question_type": "radical_transformations", "question": "Describe y=√(x+4)+2.", "answer": "Left 4, up 2" },
+    { "id": 49, "question_type": "radical_vs_quadratic", "question": "How are y=x^2 and y=√x related?", "answer": "They are inverses with domain restrictions" },
+    { "id": 50, "question_type": "radical_equations_reasoning", "question": "Why must radical equation solutions be checked?", "answer": "Squaring can introduce extraneous solutions" },
+
+    { "id": 51, "question_type": "rational_functions_behavior", "question": "What causes vertical asymptotes in rational functions?", "answer": "Zeros in the denominator" },
+    { "id": 52, "question_type": "rational_functions_behavior", "question": "What causes holes in rational functions?", "answer": "Common factors that cancel" },
+    { "id": 53, "question_type": "rational_functions_behavior", "question": "What determines horizontal asymptotes?", "answer": "Comparing degrees of numerator and denominator" },
+    { "id": 54, "question_type": "rational_functions_interpretation", "question": "What does it mean if degrees are equal?", "answer": "Horizontal asymptote equals ratio of leading coefficients" },
+    { "id": 55, "question_type": "rational_functions_interpretation", "question": "What happens if numerator degree is less than denominator?", "answer": "Horizontal asymptote at y=0" },
+
+    { "id": 56, "question_type": "sequence_identification", "question": "Is the sequence 2, 5, 8, 11 arithmetic or geometric?", "answer": "Arithmetic" },
+    { "id": 57, "question_type": "sequence_identification", "question": "Is the sequence 3, 6, 12, 24 geometric or arithmetic?", "answer": "Geometric" },
+    { "id": 58, "question_type": "sequence_reasoning", "question": "What operation defines an arithmetic sequence?", "answer": "Addition" },
+    { "id": 59, "question_type": "sequence_reasoning", "question": "What operation defines a geometric sequence?", "answer": "Multiplication" },
+    { "id": 60, "question_type": "sequence_graphs", "question": "What type of graph does an arithmetic sequence form?", "answer": "Linear" },
+
+    { "id": 61, "question_type": "sequence_graphs", "question": "What type of graph does a geometric sequence form?", "answer": "Exponential" },
+    { "id": 62, "question_type": "model_selection", "question": "When should you use a linear model instead of exponential?", "answer": "When change is constant" },
+    { "id": 63, "question_type": "model_selection", "question": "When should you use an exponential model?", "answer": "When change is proportional" },
+    { "id": 64, "question_type": "scatterplot_interpretation", "question": "What does a positive correlation mean?", "answer": "As one variable increases, the other tends to increase" },
+    { "id": 65, "question_type": "scatterplot_interpretation", "question": "What does no correlation mean?", "answer": "No apparent relationship between variables" },
+
+    { "id": 66, "question_type": "regression_concept", "question": "What is the purpose of regression?", "answer": "To model data with a function" },
+    { "id": 67, "question_type": "regression_linear", "question": "What does slope represent in a linear regression?", "answer": "Rate of change" },
+    { "id": 68, "question_type": "regression_exponential", "question": "What does the base represent in exponential regression?", "answer": "Growth or decay factor" },
+    { "id": 69, "question_type": "outliers", "question": "What is an outlier?", "answer": "A data point far from the general trend" },
+    { "id": 70, "question_type": "outliers_effect", "question": "How do outliers affect regression models?", "answer": "They can skew the model" },
+
+    { "id": 71, "question_type": "function_comparison", "question": "Which grows faster for large x: x^2 or x^3?", "answer": "x^3" },
+    { "id": 72, "question_type": "function_comparison", "question": "Which grows faster for large x: x^5 or 3^x?", "answer": "3^x" },
+    { "id": 73, "question_type": "inverse_graphs", "question": "How do you graph an inverse function?", "answer": "Reflect the graph over y=x" },
+    { "id": 74, "question_type": "inverse_graphs", "question": "What test determines if a graph has an inverse?", "answer": "Horizontal line test" },
+    { "id": 75, "question_type": "inverse_graphs", "question": "What does failing the horizontal line test mean?", "answer": "The function is not one-to-one" },
+
+    { "id": 76, "question_type": "function_continuity", "question": "What does it mean for a function to be continuous?", "answer": "No breaks, holes, or jumps" },
+    { "id": 77, "question_type": "function_continuity", "question": "Are polynomials continuous?", "answer": "Yes, everywhere" },
+    { "id": 78, "question_type": "function_continuity", "question": "Are rational functions continuous?", "answer": "Only where defined" },
+    { "id": 79, "question_type": "function_behavior", "question": "What happens to f(x)=1/x as x approaches 0?", "answer": "The function grows without bound or decreases without bound" },
+    { "id": 80, "question_type": "function_behavior", "question": "What does asymptotic behavior describe?", "answer": "Behavior near asymptotes or infinity" },
+
+    { "id": 81, "question_type": "model_interpretation", "question": "What does the y-intercept represent in a real-world model?", "answer": "Initial value" },
+    { "id": 82, "question_type": "model_interpretation", "question": "What does slope represent in a linear model?", "answer": "Rate of change" },
+    { "id": 83, "question_type": "domain_real_world", "question": "Why is domain often restricted in real-world problems?", "answer": "Negative or unrealistic values may not make sense" },
+    { "id": 84, "question_type": "range_real_world", "question": "Why might range be restricted in modeling?", "answer": "Outputs may have physical limits" },
+    { "id": 85, "question_type": "function_reasoning", "question": "Why are functions useful in modeling?", "answer": "They describe consistent input-output relationships" },
+
+    { "id": 86, "question_type": "graph_interpretation", "question": "What does a steep slope indicate?", "answer": "Rapid change" },
+    { "id": 87, "question_type": "graph_interpretation", "question": "What does a flat line indicate?", "answer": "No change" },
+    { "id": 88, "question_type": "graph_interpretation", "question": "What does a decreasing function mean?", "answer": "Outputs decrease as inputs increase" },
+    { "id": 89, "question_type": "graph_interpretation", "question": "What does an increasing function mean?", "answer": "Outputs increase as inputs increase" },
+    { "id": 90, "question_type": "graph_interpretation", "question": "What does a turning point represent?", "answer": "A change from increasing to decreasing or vice versa" },
+
+    { "id": 91, "question_type": "inequality_graphing", "question": "How do you graph y > 3x - 2?", "answer": "Dashed line with shading above" },
+    { "id": 92, "question_type": "inequality_graphing", "question": "How do you graph y ≤ x^2?", "answer": "Solid parabola with shading below" },
+    { "id": 93, "question_type": "system_graphing", "question": "What does the intersection of two graphs represent?", "answer": "A solution to the system" },
+    { "id": 94, "question_type": "system_graphing", "question": "What does no intersection mean?", "answer": "No solution" },
+    { "id": 95, "question_type": "system_graphing", "question": "What does infinitely many intersections mean?", "answer": "Infinitely many solutions" },
+
+    { "id": 96, "question_type": "function_language", "question": "What does independent variable mean?", "answer": "Input variable" },
+    { "id": 97, "question_type": "function_language", "question": "What does dependent variable mean?", "answer": "Output variable" },
+    { "id": 98, "question_type": "model_validation", "question": "Why should models be validated?", "answer": "To ensure they fit the data appropriately" },
+    { "id": 99, "question_type": "model_limitations", "question": "Why might a model fail outside its data range?", "answer": "Assumptions may no longer hold" },
+    { "id": 100, "question_type": "algebra2_synthesis", "question": "What is the main goal of Algebra 2?", "answer": "To understand and model relationships between quantities" }
+  ]
+}
