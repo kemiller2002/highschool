@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Algebra 2 Concept Guide</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; line-height: 1.5; margin: 0; padding: 24px; max-width: 980px; }
+    h1 { margin: 0 0 10px; }
+    .muted { opacity: 0.75; margin: 0 0 18px; }
+    .toc { padding: 12px 14px; border: 1px solid rgba(127,127,127,.35); border-radius: 12px; margin: 18px 0 24px; }
+    .toc ol { margin: 8px 0 0 20px; }
+    .card { border: 1px solid rgba(127,127,127,.35); border-radius: 16px; padding: 16px; margin: 14px 0; }
+    .card h2 { margin: 0 0 6px; font-size: 1.15rem; }
+    .pill { display: inline-block; padding: 2px 10px; border-radius: 999px; border: 1px solid rgba(127,127,127,.35); font-size: .85rem; opacity: .9; }
+    code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    ul { margin: 8px 0 0 22px; }
+    .toplink { float: right; font-size: .9rem; opacity: .85; }
+    a { color: inherit; }
+  </style>
+</head>
+<body>
+  <h1>Algebra 2 Concept Guide</h1>
+  <p class="muted">
+    Each concept below has its own anchor so other pages can deep-link directly to it.
+    Example link format: <code>concepts.html#quadratics</code>
+  </p>
+
+  <nav class="toc" id="top">
+    <strong>Table of Contents (Anchors)</strong>
+    <ol>
+      <li><a href="#linear_equation">Linear Equations</a></li>
+      <li><a href="#linear_inequality">Linear Inequalities</a></li>
+      <li><a href="#absolute_value">Absolute Value</a></li>
+      <li><a href="#systems">Systems (Equations & Matrices)</a></li>
+      <li><a href="#radicals">Radicals & Exponent Rules</a></li>
+      <li><a href="#radical_equations">Radical Equations</a></li>
+      <li><a href="#complex_numbers">Complex Numbers</a></li>
+      <li><a href="#polynomials_factoring">Polynomial Factoring</a></li>
+      <li><a href="#quadratics">Quadratics</a></li>
+      <li><a href="#functions_basics">Functions Basics</a></li>
+      <li><a href="#functions_domain_range">Domain & Range</a></li>
+      <li><a href="#functions_transformations">Function Transformations</a></li>
+      <li><a href="#functions_composition_inverse">Composition & Inverses</a></li>
+      <li><a href="#polynomials_graphs">Polynomial Graphs</a></li>
+      <li><a href="#polynomials_division">Polynomial Division & Theorems</a></li>
+      <li><a href="#rational_expressions">Rational Expressions & Equations</a></li>
+      <li><a href="#rational_functions">Rational Functions (Asymptotes & Holes)</a></li>
+      <li><a href="#exponentials">Exponential Functions</a></li>
+      <li><a href="#logarithms">Logarithms</a></li>
+      <li><a href="#sequences_series">Sequences & Series</a></li>
+      <li><a href="#modeling">Modeling & Data</a></li>
+    </ol>
+  </nav>
+
+  <!-- 1 -->
+  <section class="card" id="linear_equation">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Linear Equations <span class="pill">#linear_equation</span></h2>
+    <p>A <strong>linear equation</strong> has variables only to the first power and graphs as a straight line.</p>
+    <ul>
+      <li><strong>Goal:</strong> isolate the variable using inverse operations.</li>
+      <li><strong>Key skills:</strong> combining like terms, distributing, clearing fractions (carefully).</li>
+      <li><strong>Typical forms:</strong> <code>ax + b = c</code>, or after simplifying.</li>
+    </ul>
+  </section>
+
+  <!-- 2 -->
+  <section class="card" id="linear_inequality">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Linear Inequalities <span class="pill">#linear_inequality</span></h2>
+    <p>Like linear equations, but the solution is a <strong>range</strong> of values.</p>
+    <ul>
+      <li><strong>Critical rule:</strong> when you multiply or divide by a negative number, <strong>flip</strong> the inequality sign.</li>
+      <li><strong>Compound inequalities:</strong> solve each part while keeping the “and/or” meaning.</li>
+      <li><strong>Graphing:</strong> open circle for <code>&lt;</code> or <code>&gt;</code>, closed circle for <code>≤</code> or <code>≥</code>.</li>
+    </ul>
+  </section>
+
+  <!-- 3 -->
+  <section class="card" id="absolute_value">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Absolute Value <span class="pill">#absolute_value</span></h2>
+    <p><strong>Absolute value</strong> measures distance from 0: <code>|x| ≥ 0</code>.</p>
+    <ul>
+      <li><strong>Equations:</strong> <code>|A| = k</code> (with <code>k ≥ 0</code>) becomes <code>A = k</code> or <code>A = -k</code>.</li>
+      <li><strong>Inequalities:</strong> translate distance ideas:
+        <ul>
+          <li><code>|A| &lt; k</code> means <code>-k &lt; A &lt; k</code></li>
+          <li><code>|A| &gt; k</code> means <code>A &lt; -k</code> or <code>A &gt; k</code></li>
+        </ul>
+      </li>
+      <li><strong>Graph:</strong> the parent <code>y=|x|</code> is V-shaped.</li>
+    </ul>
+  </section>
+
+  <!-- 4 -->
+  <section class="card" id="systems">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Systems (Equations & Matrices) <span class="pill">#systems</span></h2>
+    <p>A <strong>system</strong> is multiple equations with the same variables; the solution satisfies all of them.</p>
+    <ul>
+      <li><strong>Methods:</strong> substitution, elimination, graphing.</li>
+      <li><strong>Interpretation:</strong> intersection point(s) of graphs.</li>
+      <li><strong>Matrices (often Algebra 2/Precalc):</strong> represent systems and do operations like multiplication, determinant, and inverse (2×2 cases).</li>
+    </ul>
+  </section>
+
+  <!-- 5 -->
+  <section class="card" id="radicals">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Radicals & Exponent Rules <span class="pill">#radicals</span></h2>
+    <p>Radicals connect to rational exponents: <code>a^(1/n) = √[n](a)</code>.</p>
+    <ul>
+      <li><strong>Exponent rules:</strong> product/quotient/power rules for simplifying expressions.</li>
+      <li><strong>Simplifying radicals:</strong> pull out perfect squares (or perfect nth powers).</li>
+      <li><strong>Important:</strong> <code>√(x^2) = |x|</code> because the principal square root is nonnegative.</li>
+    </ul>
+  </section>
+
+  <!-- 6 -->
+  <section class="card" id="radical_equations">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Radical Equations <span class="pill">#radical_equations</span></h2>
+    <p>Equations containing radicals (like square roots). You often eliminate the radical by squaring both sides.</p>
+    <ul>
+      <li><strong>Workflow:</strong> isolate the radical → square both sides → solve → <strong>check</strong> solutions.</li>
+      <li><strong>Why check?</strong> squaring can create <em>extraneous</em> solutions that don’t satisfy the original equation.</li>
+      <li><strong>Domain awareness:</strong> even before solving, the radicand must be valid (e.g., ≥ 0 for square roots of real numbers).</li>
+    </ul>
+  </section>
+
+  <!-- 7 -->
+  <section class="card" id="complex_numbers">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Complex Numbers <span class="pill">#complex_numbers</span></h2>
+    <p>Complex numbers extend real numbers using <code>i</code>, where <code>i^2 = -1</code>.</p>
+    <ul>
+      <li><strong>Standard form:</strong> <code>a + bi</code>.</li>
+      <li><strong>Powers of i cycle:</strong> <code>i, -1, -i, 1</code> (repeat every 4).</li>
+      <li><strong>Quadratics:</strong> equations like <code>x^2 + 4 = 0</code> have complex solutions <code>x=±2i</code>.</li>
+    </ul>
+  </section>
+
+  <!-- 8 -->
+  <section class="card" id="polynomials_factoring">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Polynomial Factoring <span class="pill">#polynomials_factoring</span></h2>
+    <p>Factoring rewrites a polynomial as a product of simpler expressions.</p>
+    <ul>
+      <li><strong>Common patterns:</strong> GCF, trinomials, difference of squares.</li>
+      <li><strong>Cubes:</strong>
+        <ul>
+          <li><code>a^3 - b^3 = (a-b)(a^2 + ab + b^2)</code></li>
+          <li><code>a^3 + b^3 = (a+b)(a^2 - ab + b^2)</code></li>
+        </ul>
+      </li>
+      <li><strong>Why factor?</strong> solving equations, simplifying rational expressions, finding zeros.</li>
+    </ul>
+  </section>
+
+  <!-- 9 -->
+  <section class="card" id="quadratics">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Quadratics <span class="pill">#quadratics</span></h2>
+    <p>A quadratic function is degree 2: <code>ax^2 + bx + c</code>. Its graph is a parabola.</p>
+    <ul>
+      <li><strong>Solving:</strong> factoring, completing the square, quadratic formula.</li>
+      <li><strong>Vertex form:</strong> <code>y = a(x-h)^2 + k</code> shows vertex <code>(h,k)</code>.</li>
+      <li><strong>Discriminant:</strong> <code>b^2 - 4ac</code> tells number of real roots (2, 1, or 0).</li>
+      <li><strong>Quadratic inequalities:</strong> solve by finding roots and using a sign chart/interval test.</li>
+    </ul>
+  </section>
+
+  <!-- 10 -->
+  <section class="card" id="functions_basics">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Functions Basics <span class="pill">#functions_basics</span></h2>
+    <p>A function assigns exactly one output to each input. Notation: <code>f(x)</code>.</p>
+    <ul>
+      <li><strong>Evaluate:</strong> substitute an input value into the rule.</li>
+      <li><strong>Piecewise:</strong> different rules on different intervals.</li>
+      <li><strong>Even/odd:</strong> even → y-axis symmetry; odd → origin symmetry.</li>
+      <li><strong>Average rate of change:</strong> slope of secant line between two points.</li>
+    </ul>
+  </section>
+
+  <!-- 11 -->
+  <section class="card" id="functions_domain_range">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Domain & Range <span class="pill">#functions_domain_range</span></h2>
+    <p><strong>Domain</strong> = allowed inputs. <strong>Range</strong> = possible outputs.</p>
+    <ul>
+      <li><strong>Rational expressions:</strong> denominator cannot be 0.</li>
+      <li><strong>Even roots:</strong> radicand must be ≥ 0 for real-valued square roots.</li>
+      <li><strong>Logarithms:</strong> input must be &gt; 0.</li>
+      <li><strong>Modeling:</strong> real-world constraints often restrict domain/range.</li>
+    </ul>
+  </section>
+
+  <!-- 12 -->
+  <section class="card" id="functions_transformations">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Function Transformations <span class="pill">#functions_transformations</span></h2>
+    <p>Transformations move or reshape graphs from a parent function.</p>
+    <ul>
+      <li><strong>Shifts:</strong> <code>f(x-h)</code> right h; <code>f(x)+k</code> up k.</li>
+      <li><strong>Stretches:</strong> <code>af(x)</code> vertical stretch if |a|&gt;1, shrink if 0&lt;|a|&lt;1.</li>
+      <li><strong>Reflections:</strong> <code>-f(x)</code> reflects over x-axis; <code>f(-x)</code> reflects over y-axis.</li>
+    </ul>
+  </section>
+
+  <!-- 13 -->
+  <section class="card" id="functions_composition_inverse">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Composition & Inverses <span class="pill">#functions_composition_inverse</span></h2>
+    <p><strong>Composition</strong> combines functions: <code>(f∘g)(x)=f(g(x))</code>.</p>
+    <ul>
+      <li><strong>Inverse:</strong> undoes a function; if invertible, <code>f(f⁻¹(x))=x</code>.</li>
+      <li><strong>One-to-one test:</strong> horizontal line test on the graph.</li>
+      <li><strong>Graph inverse:</strong> reflect across <code>y=x</code>.</li>
+      <li><strong>Restricting domain:</strong> makes some functions (like <code>x^2</code>) invertible.</li>
+    </ul>
+  </section>
+
+  <!-- 14 -->
+  <section class="card" id="polynomials_graphs">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Polynomial Graphs <span class="pill">#polynomials_graphs</span></h2>
+    <p>Polynomial graphs are smooth and continuous. Key features come from degree and factors.</p>
+    <ul>
+      <li><strong>End behavior:</strong> controlled by degree (even/odd) and leading coefficient (positive/negative).</li>
+      <li><strong>Zeros & multiplicity:</strong> odd multiplicity crosses the x-axis; even multiplicity touches/turns.</li>
+      <li><strong>Turning points:</strong> at most degree − 1.</li>
+      <li><strong>Max number of x-intercepts:</strong> at most the degree (counting real roots).</li>
+    </ul>
+  </section>
+
+  <!-- 15 -->
+  <section class="card" id="polynomials_division">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Polynomial Division & Theorems <span class="pill">#polynomials_division</span></h2>
+    <p>Division helps rewrite polynomials and test factors efficiently.</p>
+    <ul>
+      <li><strong>Synthetic division:</strong> fast division by <code>(x - c)</code>.</li>
+      <li><strong>Remainder theorem:</strong> remainder when dividing by <code>(x-c)</code> equals <code>p(c)</code>.</li>
+      <li><strong>Factor theorem:</strong> <code>(x-c)</code> is a factor iff <code>p(c)=0</code>.</li>
+      <li><strong>Long division:</strong> works for any divisor (including non-monic or higher degree).</li>
+    </ul>
+  </section>
+
+  <!-- 16 -->
+  <section class="card" id="rational_expressions">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Rational Expressions & Equations <span class="pill">#rational_expressions</span></h2>
+    <p>Rational expressions are fractions with polynomials.</p>
+    <ul>
+      <li><strong>Simplify:</strong> factor and cancel common factors (but keep domain restrictions).</li>
+      <li><strong>Restrictions:</strong> original denominator ≠ 0, even if factors cancel later.</li>
+      <li><strong>Rational equations:</strong> multiply by the LCD to clear denominators, then check restrictions.</li>
+      <li><strong>Rational inequalities:</strong> use critical points (zeros and undefined points) and a sign chart.</li>
+    </ul>
+  </section>
+
+  <!-- 17 -->
+  <section class="card" id="rational_functions">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Rational Functions (Asymptotes & Holes) <span class="pill">#rational_functions</span></h2>
+    <p>Rational functions are graphs of rational expressions, with discontinuities.</p>
+    <ul>
+      <li><strong>Vertical asymptotes:</strong> denominator = 0 after simplifying (non-canceled factors).</li>
+      <li><strong>Holes:</strong> canceled factors create removable discontinuities (a “missing point”).</li>
+      <li><strong>Horizontal asymptotes:</strong> compare degrees:
+        <ul>
+          <li>deg top &lt; deg bottom → <code>y=0</code></li>
+          <li>deg top = deg bottom → ratio of leading coefficients</li>
+          <li>deg top &gt; deg bottom → no horizontal (maybe slant/oblique)</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <!-- 18 -->
+  <section class="card" id="exponentials">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Exponential Functions <span class="pill">#exponentials</span></h2>
+    <p>Exponential functions have the variable in the exponent, like <code>a·b^x</code>.</p>
+    <ul>
+      <li><strong>Growth vs decay:</strong> b&gt;1 grows; 0&lt;b&lt;1 decays.</li>
+      <li><strong>Interpretation:</strong> the base b is a multiplicative growth/decay factor per step.</li>
+      <li><strong>Compare growth:</strong> exponentials eventually outgrow polynomials for large x.</li>
+    </ul>
+  </section>
+
+  <!-- 19 -->
+  <section class="card" id="logarithms">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Logarithms <span class="pill">#logarithms</span></h2>
+    <p>Logs are inverses of exponentials: <code>log_b(x)=y</code> means <code>b^y=x</code>.</p>
+    <ul>
+      <li><strong>Domain:</strong> log input must be &gt; 0.</li>
+      <li><strong>Properties:</strong> product, quotient, power rules help expand/condense expressions.</li>
+      <li><strong>Solving:</strong> rewrite as exponential form or use properties + exponent rules.</li>
+      <li><strong>Change of base:</strong> <code>log_b(a)=ln(a)/ln(b)</code> (or common log).</li>
+    </ul>
+  </section>
+
+  <!-- 20 -->
+  <section class="card" id="sequences_series">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Sequences & Series <span class="pill">#sequences_series</span></h2>
+    <p>A <strong>sequence</strong> is a list of terms; a <strong>series</strong> is the sum of terms.</p>
+    <ul>
+      <li><strong>Arithmetic:</strong> add a constant difference (linear pattern).</li>
+      <li><strong>Geometric:</strong> multiply by a constant ratio (exponential pattern).</li>
+      <li><strong>Explicit formulas:</strong> write <code>a_n</code> to compute the nth term directly.</li>
+      <li><strong>Geometric sum:</strong> common Algebra 2 topic for finite sums.</li>
+    </ul>
+  </section>
+
+  <!-- 21 -->
+  <section class="card" id="modeling">
+    <a class="toplink" href="#top">Back to top</a>
+    <h2>Modeling & Data <span class="pill">#modeling</span></h2>
+    <p>Modeling uses functions to describe real relationships and data trends.</p>
+    <ul>
+      <li><strong>Linear model:</strong> constant change per step (slope).</li>
+      <li><strong>Exponential model:</strong> proportional change (percentage growth/decay).</li>
+      <li><strong>Regression:</strong> finds a “best fit” function for data.</li>
+      <li><strong>Outliers:</strong> unusual points can distort a model; interpret carefully.</li>
+      <li><strong>Validation:</strong> models may fail outside the data range (extrapolation risk).</li>
+    </ul>
+  </section>
+
+  <p class="muted" style="margin-top: 24px;">
+    Tip: link directly to a concept like <code>concepts.html#rational_functions</code>.
+  </p>
+</body>
+</html>
