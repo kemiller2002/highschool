@@ -1,0 +1,26 @@
+{
+  "version": "1.0",
+  "concepts": {
+    "linear_equation": { "display_name": "Linear Equations" },
+    "linear_inequality": { "display_name": "Linear Inequalities" },
+    "absolute_value": { "display_name": "Absolute Value" },
+    "functions_basics": { "display_name": "Functions (Basics)" },
+    "functions_domain_range": { "display_name": "Domain & Range" },
+    "functions_transformations": { "display_name": "Transformations" },
+    "functions_composition_inverse": { "display_name": "Composition & Inverses" },
+    "quadratics": { "display_name": "Quadratics" },
+    "polynomials_factoring": { "display_name": "Polynomial Factoring" },
+    "polynomials_division": { "display_name": "Division, Remainder & Factor Theorems" },
+    "polynomials_graphs": { "display_name": "Polynomial Graph Behavior" },
+    "rational_expressions": { "display_name": "Rational Expressions" },
+    "rational_functions": { "display_name": "Rational Functions & Asymptotes" },
+    "radicals": { "display_name": "Radicals & Rational Exponents" },
+    "radical_equations": { "display_name": "Radical Equations (Extraneous Roots)" },
+    "complex_numbers": { "display_name": "Complex Numbers" },
+    "exponentials": { "display_name": "Exponential Functions" },
+    "logarithms": { "display_name": "Logarithms" },
+    "sequences_series": { "display_name": "Sequences & Series" },
+    "systems": { "display_name": "Systems (Linear & Nonlinear)" },
+    "modeling": { "display_name": "Modeling & Interpretation" }
+  }
+}
